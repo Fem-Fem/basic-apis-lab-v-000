@@ -5,7 +5,7 @@ class RepositoriesController < ApplicationController
   end
 
   def github_search
-    @resp = Faraday.get 'https://api.foursquare.com/v2/venues/search' do |req|
+    @resp = Faraday.get 'https://api.github.com/search/repositories' do |req|
     end
     body = JSON.parse(@resp.body)
     if @resp.success?
